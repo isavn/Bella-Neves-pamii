@@ -17,23 +17,3 @@ export default function Home() {
     </View>
   );
 }
-}export default function Page() 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#121212', // Fundo escuro do Spotify
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    color: '#1DB954', // Verde oficial do Spotify
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    marginTop: 8,
-  },
-});

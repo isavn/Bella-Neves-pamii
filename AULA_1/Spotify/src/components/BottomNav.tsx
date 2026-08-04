@@ -6,4 +6,3 @@ export default function BottomNav() {
       <Text>🏠 🔍 📚</Text>
     </View>
   );
-}
