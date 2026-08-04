@@ -19,7 +19,7 @@ export function WebBadge() {
         source={
           scheme === 'dark'
             ? require('@/assets/images/expo-badge-white.png')
-            : require('@/assets/images/expo-badge.png')
+            : require('@/assets/images/expo-badge.png')1'
         }
         style={styles.badgeImage}
       />

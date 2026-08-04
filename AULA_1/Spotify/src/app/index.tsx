@@ -1,13 +1,23 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { View } from "react-native";
 
-export default function Page() {
+import Header from "../components/header";
+import SearchBar from "../components/SearchBar";
+import Categories from "../components/Categories";
+import Playlist from "../components/Playlist";
+import BottomNav from "../components/BottomNav";
+
+export default function Home() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Spotify 🎵</Text>
-      <Text style={styles.subtitle}>Lady Gaga>>>>>></Text>
+    <View>
+      <Header />
+      <SearchBar />
+      <Categories />
+      <Playlist />
+      <BottomNav />
     </View>
   );
 }
+}export default function Page() 
 
 const styles = StyleSheet.create({
   container: {
