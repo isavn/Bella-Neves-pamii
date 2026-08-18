@@ -1,61 +1,125 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable, Alert } from "react-native";
 
 export default function Home() {
   return (
     <View style={styles.container}>
 
-      <Text style={styles.titulo}>Boa noite</Text>
+      <Text style={styles.titulo}>Boa noite João .✦ ݁˖</Text>
 
       <Text style={styles.secao}>Suas playlists</Text>
 
       <View style={styles.linha}>
-        <View style={styles.card}>
-          <Text style={styles.simbolo}>♫</Text>
+        <Pressable
+          style={({ pressed }) => [
+            styles.card,
+            pressed && styles.cardPressionado,
+          ]}
+          onPress={() =>
+            Alert.alert("Playlist", "Você clicou em Músicas Curtidas!")
+          }
+        >
+          <Text style={styles.simbolo}>♥︎</Text>
           <Text style={styles.texto}>Músicas Curtidas</Text>
-        </View>
+        </Pressable>
 
-        <View style={styles.card}>
+        <Pressable
+          style={({ pressed }) => [
+            styles.card,
+            pressed && styles.cardPressionado,
+          ]}
+          onPress={() =>
+            Alert.alert("Playlist", "Você clicou em Lana Del Rey songs!")
+          }
+        >
           <Text style={styles.simbolo}>♫</Text>
-          <Text style={styles.texto}>Minha Playlist</Text>
-        </View>
+          <Text style={styles.texto}>Lana Del Rey songs</Text>
+        </Pressable>
       </View>
 
       <View style={styles.linha}>
-        <View style={styles.card}>
+        <Pressable
+          style={({ pressed }) => [
+            styles.card,
+            pressed && styles.cardPressionado,
+          ]}
+          onPress={() =>
+            Alert.alert("Playlist", "Você clicou em Daily Mix!")
+          }
+        >
           <Text style={styles.simbolo}>♫</Text>
           <Text style={styles.texto}>Daily Mix</Text>
-        </View>
+        </Pressable>
 
-        <View style={styles.card}>
+        <Pressable
+          style={({ pressed }) => [
+            styles.card,
+            pressed && styles.cardPressionado,
+          ]}
+          onPress={() =>
+            Alert.alert("Playlist", "Você clicou em Match João + Laís!")
+          }
+        >
           <Text style={styles.simbolo}>♫</Text>
-          <Text style={styles.texto}>Descobertas</Text>
-        </View>
+          <Text style={styles.texto}>Match João + Laís</Text>
+        </Pressable>
       </View>
 
-      <Text style={styles.secao}>Feitos para você</Text>
+      <Text style={styles.secao}>Recomendações para você</Text>
 
-      <View style={styles.musica}>
-        <Text style={styles.simbolo}>♫</Text>
+      <Pressable
+        style={({ pressed }) => [
+          styles.musica,
+          pressed && styles.musicaPressionada,
+        ]}
+        onPress={() =>
+          Alert.alert("Música", "Born This Way - Lady Gaga")
+        }
+      >
+        <Text style={styles.simbolo}>✦</Text>
 
         <View>
-          <Text style={styles.nome}>Minha música</Text>
-          <Text style={styles.artista}>Artista</Text>
+          <Text style={styles.nome}>Born This Way</Text>
+          <Text style={styles.artista}>Lady Gaga</Text>
         </View>
-      </View>
+      </Pressable>
 
-      <View style={styles.musica}>
-        <Text style={styles.simbolo}>♫</Text>
+      <Pressable
+        style={({ pressed }) => [
+          styles.musica,
+          pressed && styles.musicaPressionada,
+        ]}
+        onPress={() =>
+          Alert.alert("Música", "Manchild - Sabrina Carpenter")
+        }
+      >
+        <Text style={styles.simbolo}>✰</Text>
 
         <View>
-          <Text style={styles.nome}>Outra música</Text>
-          <Text style={styles.artista}>Outro artista</Text>
+          <Text style={styles.nome}>Manchild</Text>
+          <Text style={styles.artista}>Sabrina Carpenter</Text>
         </View>
-      </View>
+      </Pressable>
 
       <View style={styles.menu}>
-        <Text style={styles.menuTexto}>⌂</Text>
-        <Text style={styles.menuTexto}>🔍</Text>
-        <Text style={styles.menuTexto}>☰</Text>
+
+        <Pressable
+          onPress={() => Alert.alert("Início", "Você está na página inicial")}
+        >
+          <Text style={styles.menuTexto}>⌂</Text>
+        </Pressable>
+
+        <Pressable
+          onPress={() => Alert.alert("Pesquisar", "Abrindo pesquisa...")}
+        >
+          <Text style={styles.menuTexto}>🔍︎</Text>
+        </Pressable>
+
+        <Pressable
+          onPress={() => Alert.alert("Biblioteca", "Abrindo sua biblioteca...")}
+        >
+          <Text style={styles.menuTexto}>☰</Text>
+        </Pressable>
+
       </View>
 
     </View>
@@ -99,6 +163,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 
+  cardPressionado: {
+    backgroundColor: "#3a3a3a",
+    transform: [{ scale: 0.97 }],
+  },
+
   simbolo: {
     color: "#1DB954",
     fontSize: 30,
@@ -114,6 +183,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 15,
+    padding: 5,
+    borderRadius: 5,
+  },
+
+  musicaPressionada: {
+    backgroundColor: "#282828",
   },
 
   nome: {
